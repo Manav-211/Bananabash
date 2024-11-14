@@ -1,0 +1,52 @@
+/* Container for centering the content */
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #f0f0f0; /* Optional background color */
+    background-image: url('HomeBg.jpg'); /* Add the path to your image */
+    background-size: cover; /* Scale the background to cover the entire container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Ensure the background image doesn't repeat */
+}
+
+/* Style for the welcome text */
+.welcome-text {
+    color: white; /* Change text color to white */
+    font-family: 'Helvetica', sans-serif; /* Set font to Helvetica */
+    font-size: clamp(1.5rem, 5vw, 3rem); /* Responsive font size */
+    transition: font-size 0.5s ease;
+    text-align: center;
+}
+
+.play-game-button,
+.instructions-button {
+    background-color: #45cd20; /* Blue color */
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.play-game-button:hover,
+.instructions-button:hover {
+    background-color: #0d9e3d; /* Darker blue on hover */
+}
+
+.play-game-button:active,
+.instructions-button:active {
+    background-color: #004085; /* Even darker blue on active */
+}
+
+.play-game-button {
+    margin-bottom: 1px; /* Creates space below this button */
+}
+
+.instructions-button {
+    margin-top: 0px; /* Creates space above this button */
+    margin-left: 1%;
+}
