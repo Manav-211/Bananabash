@@ -1,0 +1,155 @@
+.content-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh; /* Ensures the wrapper takes up full screen height */
+	text-align: center;
+	background-image: url('bananabash-background.jpg'); /* Add your image path here */
+	background-size: cover; /* Scales the image to cover the entire container */
+	background-position: center; /* Centers the image */
+	background-repeat: no-repeat; /* Prevents the image from repeating */
+  }
+  
+  .game-container {
+	position: relative;
+	text-align: center;
+  }
+  
+  .timer-container {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	margin: 20px auto;
+	border-radius: 50%;
+	border: 5px solid #ddd;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+  
+  .timer-progress {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border: 5px solid #f00;
+	transform-origin: center center;
+	transition: transform 1s linear;
+  }
+  
+  .timer-text {
+	font-size: 1.5em;
+	color: #333;
+  }
+  
+  .buttons-container {
+	margin-top: 20px;
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	justify-content: center;
+  }
+  
+  .number-button {
+	width: 40px;
+	height: 40px;
+	font-size: 1.2em;
+	color: #fff;
+	background-color: #007bff;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: background-color 0.3s;
+  }
+  
+  .number-button:hover {
+	background-color: #0056b3;
+  }
+  
+  .answer-message {
+	margin-top: 20px;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #333;
+  }
+  
+  .leaderboard-button {
+	margin-top: 20px;
+	padding: 10px 20px;
+	font-size: 1.2em;
+	color: #fff;
+	background-color: #28a745;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .leaderboard-button:hover {
+	background-color: #218838;
+	transform: scale(1.05); /* Slightly enlarge the button on hover */
+  }
+  
+  .leaderboard-button:active {
+	transform: scale(1); /* Reset scale when clicked */
+  }
+  
+  /* Styling for Score and Lives */
+  .score-lives-container {
+	position: absolute;
+	top: 60px;
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 20px;
+	max-width: 400px;
+	left: 50%;
+	transform: translateX(-50%);
+  }
+  
+  .score-lives-container div {
+	padding: 10px 20px;
+	border-radius: 10px;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #000000;
+	
+  }
+  
+  .score {
+	background-color: #007bff46; /* Blue background for score */
+	
+  }
+  
+  .lives {
+	background-color: #dc354687; /* Red background for lives */
+  }
+  
+  /* Banana image styling */
+  .banana-image {
+	max-width: 100%;
+	height: auto;
+	margin-top: 50px;
+  }
+  
+  .timer-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 40px;
+	background-color: #f0f0f0; /* Light gray background */
+	border-radius: 20px; /* Rounded corner box */
+	border: 2px solid #ddd; /* Optional border */
+	margin: 10px auto; /* Center it horizontally */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+  }
+  
+  .timer-text {
+	font-size: 1.2em; /* Adjust size for visibility */
+	font-weight: bold;
+	color: #333; /* Darker text for contrast */
+	text-align: center;
+  }
+  
