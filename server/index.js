@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const dotenv = require("dotenv");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
-const axios = require("axios"); // Add axios import
+const axios = require("axios"); 
 const UserModel = require("./model/User");
 
 dotenv.config();
@@ -27,7 +27,7 @@ app.use(session({
     store: MongoStore.create({
         mongoUrl: process.env.MONGO_URI
     }),
-    cookie: { maxAge: 24 * 60 * 60 * 1000 } // 1 day
+    cookie: { maxAge: 24 * 60 * 60 * 1000 } 
 }));
 
 
@@ -76,8 +76,7 @@ app.post('/api/submit-score', async (req, res) => {
     }
 });
 
-// Route to get leaderboard data
-// Leaderboard retrieval route
+
 app.get('/api/leaderboard', async (req, res) => {
     try {
         const leaderboard = await UserModel.find()
@@ -90,11 +89,6 @@ app.get('/api/leaderboard', async (req, res) => {
         res.status(500).json({ message: "Failed to fetch leaderboard." });
     }
 });
-
-
-
-
-
 
 
 app.listen(process.env.PORT, () => {
