@@ -1,0 +1,50 @@
+/* ThankYouPage.css */
+
+.thank-you-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	text-align: center;
+	color: #ffffff;
+	background-image: url('bananabash-background.jpg'); /* Replace with actual path */
+	background-size: cover;
+	background-position: center;
+	font-family: Arial, sans-serif;
+  }
+  
+  .thank-you-container h1 {
+	font-size: 3em;
+	margin-bottom: 20px;
+	color: #000000; /* Gold color for a standout effect */
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  
+  .thank-you-container p {
+	font-size: 1.5em;
+	margin: 10px 0;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  }
+  
+  .leaderboard-button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 12px 24px;
+	font-size: 1.2em;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	margin-top: 30px;
+	transition: background-color 0.3s ease;
+	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .leaderboard-button:hover {
+	background-color: #45a049;
+  }
+  
+  .leaderboard-button:active {
+	transform: scale(0.98); /* Slightly shrink the button when clicked */
+  }
+  
