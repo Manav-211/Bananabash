@@ -1,0 +1,56 @@
+/* Container for the leaderboard page background and central alignment */
+.leaderboard-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url('leaderboardbg.jpeg'); /* Background image specific to this page */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 2rem;
+    color: yellow;
+}
+
+/* Box for the leaderboard title and list */
+.leaderboard-container {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0px 4px 10px rgba(255, 255, 0, 0.5);
+    text-align: center;
+}
+
+/* Title styling */
+.leaderboard-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: yellow;
+    
+}
+
+/* Styling for the leaderboard entries */
+.leaderboard-list {
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.leaderboard-entry {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+    border-bottom: 1px solid yellow;
+}
+
+.entry-name, .entry-score {
+    color: yellow;
+}
+
+.leaderboard-entry:last-child {
+    border-bottom: none; /* Remove border for last item */
+}
