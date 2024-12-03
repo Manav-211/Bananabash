@@ -1,11 +1,11 @@
-/* Container for the leaderboard page background and central alignment */
+/* Leaderboard Page - Background and Alignment */
 .leaderboard-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-image: url('leaderboardbg.jpeg'); /* Background image specific to this page */
+    background-image: url('leaderboardbg.jpeg'); /* Background image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -14,43 +14,77 @@
     color: yellow;
 }
 
-/* Box for the leaderboard title and list */
+/* Container for the leaderboard box */
 .leaderboard-container {
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
     padding: 2rem;
-    border-radius: 10px;
-    max-width: 400px;
-    width: 100%;
-    box-shadow: 0px 4px 10px rgba(255, 255, 0, 0.5);
+    border-radius: 15px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
 
-/* Title styling */
+/* Leaderboard Title */
 .leaderboard-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     color: yellow;
-    
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 5px black;
 }
 
-/* Styling for the leaderboard entries */
+/* Header Row for Column Titles */
+.leaderboard-headers {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #FFD700; /* Gold color for headers */
+    border-bottom: 2px solid yellow;
+    margin-bottom: 0.5rem;
+}
+
+/* Header Titles */
+.header-name {
+    text-align: left;
+    flex: 1; /* Equal spacing */
+}
+
+.header-score {
+    text-align: right;
+    flex: 1; /* Equal spacing */
+}
+
+/* Leaderboard List Styling */
 .leaderboard-list {
     padding: 1rem;
     border-radius: 8px;
 }
 
+/* Individual Entry Styling */
 .leaderboard-entry {
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 0;
     font-size: 1.2rem;
-    border-bottom: 1px solid yellow;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 0, 0.5);
+    transition: background-color 0.3s ease;
 }
 
+/* Highlight entry on hover */
+.leaderboard-entry:hover {
+    background-color: rgba(255, 255, 0, 0.1);
+}
+
+/* Name and Score Styling */
 .entry-name, .entry-score {
-    color: yellow;
+    flex: 1; /* Equal space for columns */
 }
 
+/* Remove border for last entry */
 .leaderboard-entry:last-child {
-    border-bottom: none; /* Remove border for last item */
+    border-bottom: none;
 }
