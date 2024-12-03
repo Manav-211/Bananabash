@@ -7,6 +7,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const axios = require("axios"); 
 const UserModel = require("./model/User");
+const path = require('path');
 
 
 
@@ -33,7 +34,18 @@ app.use(session({
     cookie: { maxAge: 24 * 60 * 60 * 1000 } 
 }));
 
+// Serve static files from the 'music' directory
+app.use('/music', express.static(path.join(__dirname, 'music')));
 
+// API route to get the music file URL
+app.get('/api/music', (req, res) => {
+    try {
+        res.json({ url: 'http://localhost:3001/music/banana_bash.mp3' });
+    } catch (error) {
+        console.error("Error serving music file:", error);
+        res.status(500).json({ message: "Failed to fetch music file" });
+    }
+});
 
 
 
