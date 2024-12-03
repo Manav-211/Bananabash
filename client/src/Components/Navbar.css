@@ -1,0 +1,36 @@
+/* Navbar background color */
+.navbar {
+	background-color: #1e3a8a; /* Dark blue background */
+	display: flex;
+	justify-content: space-between; /* Aligns title to the left and buttons to the right */
+	padding: 0 1rem;
+  }
+  
+  /* Title styling */
+  .navbar-title {
+	color: white;
+	font-size: 2rem;
+	font-weight: 700;
+  }
+  
+  /* Button styling */
+  .navbar-button {
+	font-size: 1.2rem;
+	font-weight: 700;
+	padding: 0.3rem 1.4rem;
+	color: white;
+	margin-left: 10px; /* Adds space between the login and signup buttons */
+  }
+  
+  /* Button colors */
+  .navbar-button-login,
+  .navbar-button-signup {
+	background-color: #4caf50; /* Green button color for both buttons */
+  }
+  
+  /* Optional: Button hover effect */
+  .navbar-button-login:hover,
+  .navbar-button-signup:hover {
+	background-color: #388e3c; /* Darker green on hover */
+  }
+  
