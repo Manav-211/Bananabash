@@ -8,6 +8,9 @@ const MongoStore = require("connect-mongo");
 const axios = require("axios"); 
 const UserModel = require("./model/User");
 
+
+
+
 dotenv.config();
 const app = express();
 app.use(express.json());
@@ -29,6 +32,10 @@ app.use(session({
     }),
     cookie: { maxAge: 24 * 60 * 60 * 1000 } 
 }));
+
+
+
+
 
 
 // Route to fetch banana data
