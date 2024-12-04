@@ -1,11 +1,11 @@
-/* Leaderboard Page - Background and Alignment */
+
 .leaderboard-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-image: url('leaderboardnewbg.jpg'); /* Background image */
+    background-image: url('leaderboardnewbg.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -14,9 +14,9 @@
     color: yellow;
 }
 
-/* Container for the leaderboard box */
+
 .leaderboard-container {
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    background-color: rgba(0, 0, 0, 0.8); 
     padding: 2rem;
     border-radius: 1px;
     max-width: 500px;
@@ -25,7 +25,7 @@
     text-align: center;
 }
 
-/* Leaderboard Title */
+
 .leaderboard-title {
     font-size: 2.5rem;
     font-weight: bold;
@@ -34,36 +34,36 @@
     text-shadow: 2px 2px 5px black;
 }
 
-/* Header Row for Column Titles */
+
 .leaderboard-headers {
     display: flex;
     justify-content: space-between;
     padding: 0.8rem 0;
     font-size: 1.3rem;
     font-weight: bold;
-    color: #FFD700; /* Gold color for headers */
+    color: #FFD700; 
     border-bottom: 2px solid yellow;
     margin-bottom: 0.5rem;
 }
 
-/* Header Titles */
+
 .header-name {
     text-align: left;
-    flex: 1; /* Equal spacing */
+    flex: 1; 
 }
 
 .header-score {
     text-align: right;
-    flex: 1; /* Equal spacing */
+    flex: 1; 
 }
 
-/* Leaderboard List Styling */
+
 .leaderboard-list {
     padding: 1rem;
     border-radius: 8px;
 }
 
-/* Individual Entry Styling */
+
 .leaderboard-entry {
     display: flex;
     justify-content: space-between;
@@ -74,17 +74,17 @@
     transition: background-color 0.3s ease;
 }
 
-/* Highlight entry on hover */
+
 .leaderboard-entry:hover {
     background-color: rgba(255, 255, 0, 0.1);
 }
 
-/* Name and Score Styling */
+
 .entry-name, .entry-score {
-    flex: 1; /* Equal space for columns */
+    flex: 1; 
 }
 
-/* Remove border for last entry */
+
 .leaderboard-entry:last-child {
     border-bottom: none;
 }

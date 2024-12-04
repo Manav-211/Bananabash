@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Grid, Link, Button, Paper, TextField, Typography } from "@mui/material";
-import "./SignUp.css"; // Import the CSS file
+import "./SignUp.css"; 
 
 function SignUp() {
     const [name, setName] = useState("");

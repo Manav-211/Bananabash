@@ -1,4 +1,4 @@
-/* Reset default margins and padding */
+
 * {
     margin: 0;
     padding: 0;
@@ -8,15 +8,15 @@
 html, body {
     width: 100%;
     height: 100%;
-    background-color: black; /* Page background color */
-    color: white; /* Default text color */
-    background-image: url('loginbg2.png'); /* Background image */
-    background-size: cover; /* Cover entire page */
+    background-color: black; 
+    color: white; 
+    background-image: url('loginbg2.png'); 
+    background-size: cover; 
     background-position: center;
     background-repeat: no-repeat;
 }
 
-/* Wrapper styling for the login component */
+
 .login-wrapper {
     display: flex;
     justify-content: center;
@@ -24,18 +24,18 @@ html, body {
     min-height: 100vh;
 }
 
-/* Paper container styling */
+
 .login-paper {
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    background-color: #000000 !important; /* Force black background */
-    color: #ffffff; /* White text color */
+    background-color: #000000 !important; 
+    color: #ffffff; 
     width: 80vw;
     max-width: 400px;
 }
 
-/* Heading styling */
+
 .login-heading {
     font-size: 2rem;
     font-weight: bold;
@@ -43,39 +43,39 @@ html, body {
     margin-bottom: 1rem;
 }
 
-/* Row styling for inputs */
+
 .login-row {
     margin-top: 1rem;
 }
 
-/* Input field styling */
+
 .login-input {
-    color: #ffffff !important; /* Ensures text is white */
+    color: #ffffff !important; 
 }
 
 .login-input label {
-    color: #ffffff !important; /* White label color */
+    color: #ffffff !important; 
     font-weight: 600;
     font-size: 1.2rem;
 }
 
 .login-input input {
-    color: #ffffff !important; /* White text in input fields */
-    background-color: #4f4f4f !important; /* Black background in input fields */
+    color: #ffffff !important; 
+    background-color: #4f4f4f !important; 
 }
 
-/* Button styling */
+
 .login-button {
     margin-top: 1.5rem;
     font-size: 1rem;
     font-weight: 600;
-    background-color: #4caf50 !important; /* Green button */
+    background-color: #4caf50 !important; 
     color: #ffffff !important;
     border-radius: 4px;
     text-transform: none;
 }
 
-/* Signup link styling */
+
 .signup-link {
     margin-top: 1.5rem;
     color: #ffffff;
@@ -83,7 +83,7 @@ html, body {
 }
 
 .signup-link a {
-    color: #4caf50; /* Green link */
+    color: #4caf50; 
     font-weight: bold;
     text-decoration: none;
 }
@@ -94,7 +94,7 @@ html, body {
 
 .login-row {
     display: flex;
-    justify-content: center; /* Centers the content within the row */
+    justify-content: center; 
     margin-top: 20px;
     margin-bottom: 20px;
 
@@ -107,7 +107,7 @@ html, body {
     color: white;
     border-radius: 0.5rem;
     text-transform: none;
-    width: 30%; /* Optional: makes button full width */
-    max-width: 200px; /* Optional: limit button width */
+    width: 30%; 
+    max-width: 200px; 
 
 }

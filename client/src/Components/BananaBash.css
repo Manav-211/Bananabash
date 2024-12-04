@@ -1,10 +1,10 @@
 
-/* Floating animations */
+
 .floating-animation {
   position: absolute;
-  width: 150px; /* Adjust size */
+  width: 150px; 
   height: auto;
-  z-index: 1; /* Ensure they are behind the content */
+  z-index: 1; 
 }
 
 .top-left {
@@ -23,12 +23,12 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	min-height: 100vh; /* Ensures the wrapper takes up full screen height */
+	min-height: 100vh; 
 	text-align: center;
-	background-image: url('8865027.jpg'); /* Add your image path here */
-	background-size: cover; /* Scales the image to cover the entire container */
-	background-position: center; /* Centers the image */
-	background-repeat: no-repeat; /* Prevents the image from repeating */
+	background-image: url('8865027.jpg'); 
+	background-size: cover; 
+	background-position: center; 
+	background-repeat: no-repeat; 
   }
 
 
@@ -110,46 +110,46 @@
   
   .leaderboard-button:hover {
 	background-color: #218838;
-	transform: scale(1.05); /* Slightly enlarge the button on hover */
+	transform: scale(1.05); 
   }
   
   .leaderboard-button:active {
-	transform: scale(1); /* Reset scale when clicked */
+	transform: scale(1);
   }
   
-  /* Styling for Score and Lives */
+
 .score-lives-container {
 	position: absolute;
-	top: 20px; /* Move closer to the top of the screen */
-	left: 50%; /* Center horizontally */
-	transform: translateX(-50%); /* Center alignment */
+	top: 20px; 
+	left: 50%; 
+	transform: translateX(-50%); 
 	width: 100%;
 	max-width: 400px;
 	display: flex;
 	justify-content: space-between;
 	padding: 10px;
-	z-index: 10; /* Ensure it's on top of other elements */
-  }
+	z-index: 10; 
+}
   
   .score-lives-container div {
 	padding: 10px 15px;
 	border-radius: 12px;
 	font-size: 1.2em;
 	font-weight: bold;
-	color: #fff; /* White text for readability */
-	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Text shadow for better contrast */
+	color: #fff; 
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); 
   }
   
   .score {
-	background-color: rgba(7, 70, 137, 0.886); /* Semi-transparent blue */
+	background-color: rgba(7, 70, 137, 0.886); 
   }
   
   .lives {
-	background-color: rgba(220, 16, 36, 0.881); /* Semi-transparent red */
+	background-color: rgba(220, 16, 36, 0.881); 
   }
   
   
-  /* Banana image styling */
+ 
   .banana-image {
 	max-width: 100%;
 	height: auto;
@@ -162,17 +162,17 @@
 	justify-content: center;
 	width: 80px;
 	height: 40px;
-	background-color: #f0f0f0; /* Light gray background */
-	border-radius: 20px; /* Rounded corner box */
-	border: 2px solid #ddd; /* Optional border */
-	margin: 10px auto; /* Center it horizontally */
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+	background-color: #f0f0f0;
+	border-radius: 20px; 
+	border: 2px solid #ddd; 
+	margin: 10px auto; 
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   }
   
   .timer-text {
-	font-size: 1.2em; /* Adjust size for visibility */
+	font-size: 1.2em; 
 	font-weight: bold;
-	color: #333; /* Darker text for contrast */
+	color: #333;
 	text-align: center;
   }
 

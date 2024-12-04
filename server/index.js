@@ -135,26 +135,7 @@ app.post("/signup", async (req, res) => {
     }
 });
 
-// app.post("/login", async (req, res) => {
-//     try {
-//         const { email, password } = req.body;
-//         const user = await UserModel.findOne({ email });
-//         if (user) {
-//             const passwordMatch = await bcrypt.compare(password, user.password);
-//             if (passwordMatch) {
-//                 req.session.user = { id: user._id, name: user.name, email: user.email };
-//                 console.log(user.name);
-//                 res.json("Success");
-//             } else {
-//                 res.status(401).json("Password doesn't match");
-//             }
-//         } else {
-//             res.status(404).json("No Records found");
-//         }
-//     } catch (error) {
-//         res.status(500).json({ error: error.message });
-//     }
-// });
+
 
 app.post("/login", async (req, res) => {
     try {

@@ -1,35 +1,35 @@
-/* General reset and box-sizing */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Wrapper for the signup component */
+
 .signup-wrapper {
     background-color: #121212;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('newsignupBG.png'); /* Update with your image path */
+    background-image: url('newsignupBG.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-/* Paper styling */
+
 .signup-paper {
     padding: 2rem !important;
     border-radius: 8px !important;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
-    background-color: #000000 !important; /* Black background */
-    color: #ffffff !important; /* White text */
+    background-color: #000000 !important; 
+    color: #ffffff !important; 
     width: 100%;
-    max-width: 400px; /* Limits width for better readability */
+    max-width: 400px; 
 }
 
-/* Heading styling */
+
 .signup-heading {
     font-size: 2rem;
     font-weight: bold;
@@ -37,34 +37,34 @@
     margin-bottom: 1rem;
 }
 
-/* Input styling */
+
 .signup-input {
     margin-top: 1rem;
-    color: #ffffff !important; /* Ensure input text is white */
+    color: #ffffff !important; 
 }
 
 .signup-input label {
-    color: #ffffff !important; /* White label text */
+    color: #ffffff !important; 
     font-weight: 500;
 }
 
 .signup-input input {
-    color: #ffffff !important; /* White text in input fields */
-    background-color: #1d1d1d !important; /* Black background in input fields */
+    color: #ffffff !important;
+    background-color: #1d1d1d !important; 
 }
 
-/* Button styling */
+
 .signup-button {
     margin-top: 1.5rem;
     font-size: 1rem;
     font-weight: 600;
-    background-color: #4caf50 !important; /* Green button */
+    background-color: #4caf50 !important; 
     color: #ffffff !important;
     border-radius: 4px;
     text-transform: none;
 }
 
-/* Login text styling */
+
 .signup-login-text {
     margin-top: 1.5rem;
     color: #ffffff;
@@ -72,7 +72,7 @@
 }
 
 .signup-login-text a {
-    color: #4caf50; /* Green link */
+    color: #4caf50; 
     font-weight: bold;
     text-decoration: none;
 }

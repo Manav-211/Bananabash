@@ -1,12 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./Instructions.css"; // Import the CSS file
+import "./Instructions.css"; 
 
 function Instructions() {
   const navigate = useNavigate();
 
   const handleStartGame = () => {
-    navigate("/bananabash"); // Navigate to the BananaBash game page
+    navigate("/bananabash"); 
   };
 
   return (

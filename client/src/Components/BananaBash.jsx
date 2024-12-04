@@ -51,7 +51,7 @@ function BananaBash() {
       setAudio(newAudio);
       setIsPlaying(true);
 
-      // Cleanup: Stop music when component unmounts
+      
       return () => {
         newAudio.pause();
         newAudio.src = '';
