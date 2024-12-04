@@ -8,6 +8,7 @@ const MongoStore = require("connect-mongo");
 const axios = require("axios"); 
 const UserModel = require("./model/User");
 const path = require('path');
+const nodemailer = require('nodemailer');
 
 
 
@@ -33,6 +34,10 @@ app.use(session({
     }),
     cookie: { maxAge: 24 * 60 * 60 * 1000 } 
 }));
+
+
+
+
 
 // Serve static files from the 'music' directory
 app.use('/music', express.static(path.join(__dirname, 'music')));
@@ -130,15 +135,66 @@ app.post("/signup", async (req, res) => {
     }
 });
 
+// app.post("/login", async (req, res) => {
+//     try {
+//         const { email, password } = req.body;
+//         const user = await UserModel.findOne({ email });
+//         if (user) {
+//             const passwordMatch = await bcrypt.compare(password, user.password);
+//             if (passwordMatch) {
+//                 req.session.user = { id: user._id, name: user.name, email: user.email };
+//                 console.log(user.name);
+//                 res.json("Success");
+//             } else {
+//                 res.status(401).json("Password doesn't match");
+//             }
+//         } else {
+//             res.status(404).json("No Records found");
+//         }
+//     } catch (error) {
+//         res.status(500).json({ error: error.message });
+//     }
+// });
+
 app.post("/login", async (req, res) => {
     try {
         const { email, password } = req.body;
         const user = await UserModel.findOne({ email });
+
         if (user) {
             const passwordMatch = await bcrypt.compare(password, user.password);
             if (passwordMatch) {
                 req.session.user = { id: user._id, name: user.name, email: user.email };
                 console.log(user.name);
+
+                // Send Welcome Email
+                const transporter = nodemailer.createTransport({
+                    service: 'gmail',
+                    auth: {
+                        user: 'manavpradeepkumar@gmail.com', // Use your email
+                        pass: 'daqi oobj pira kohk' // Use your app password
+                    }
+                });
+
+                const mailOptions = {
+                    from: 'bananabash33@gmail.com',
+                    to: user.email,
+                    subject: 'Welcome to Banana Bash!',
+                    text: `Hi ${user.name},\n\nWelcome to Banana Bash! We're excited to have you join our family of banana-loving gamers.\n\nGet ready to bash some bananas and climb the leaderboard!\n\nBest regards,\nThe Banana Bash Team`,
+                    html: `<h1>Welcome to Banana Bash, ${user.name}!</h1>
+                           <p>We're thrilled to have you as part of our banana family.</p>
+                           <p>Get ready to enjoy the game and aim for the top spot on the leaderboard!</p>
+                           <p>🍌 Happy Bashing! 🍌</p>
+                           <p>- The Banana Bash Team</p>`
+                };
+
+                try {
+                    await transporter.sendMail(mailOptions);
+                    console.log('Welcome email sent successfully!');
+                } catch (error) {
+                    console.error("Error sending welcome email:", error);
+                }
+
                 res.json("Success");
             } else {
                 res.status(401).json("Password doesn't match");
@@ -150,6 +206,7 @@ app.post("/login", async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+
 
 app.post("/logout", (req, res) => {
     if (req.session) {

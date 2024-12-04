@@ -1,28 +1,40 @@
-/* Container for centering the content */
+/* Container for the entire page */
 .home-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
-    background-color: #f0f0f0; /* Optional background color */
-    background-image: url('HomeBg.jpg'); /* Add the path to your image */
-    background-size: cover; /* Scale the background to cover the entire container */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Ensure the background image doesn't repeat */
+    height: 100vh;
+    background-color: #f0f0f0;
+    background-image: url('Homepg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* Overlay animation container */
+.animation-overlay {
+    position: relative; /* Prevent overlap by maintaining the animation flow in layout */
+    margin-bottom: 20px; /* Adds spacing below the animation */
 }
 
 /* Style for the welcome text */
 .welcome-text {
-    color: white; /* Change text color to white */
-    font-family: 'Helvetica', sans-serif; /* Set font to Helvetica */
-    font-size: clamp(1.5rem, 5vw, 3rem); /* Responsive font size */
-    transition: font-size 0.5s ease;
+    color: rgb(224, 243, 84);
+    font-family: 'Helvetica', sans-serif;
+    font-size: clamp(1.5rem, 5vw, 3rem);
     text-align: center;
+    z-index: 0;
+    position: relative;
+    margin: 0; /* Removes any default margin */
+    padding-top: 20px; /* Adds space above the text */
 }
 
+/* Buttons */
 .play-game-button,
 .instructions-button {
-    background-color: #45cd20; /* Blue color */
+    background-color: #45cd20;
     color: white;
     font-size: 1.2em;
     padding: 10px 20px;
@@ -30,23 +42,16 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 10px;
+    z-index: 2;
 }
 
 .play-game-button:hover,
 .instructions-button:hover {
-    background-color: #0d9e3d; /* Darker blue on hover */
+    background-color: #0d9e3d;
 }
 
 .play-game-button:active,
 .instructions-button:active {
-    background-color: #004085; /* Even darker blue on active */
-}
-
-.play-game-button {
-    margin-bottom: 1px; /* Creates space below this button */
-}
-
-.instructions-button {
-    margin-top: 0px; /* Creates space above this button */
-    margin-left: 1%;
+    background-color: #004085;
 }

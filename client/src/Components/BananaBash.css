@@ -1,3 +1,23 @@
+
+/* Floating animations */
+.floating-animation {
+  position: absolute;
+  width: 150px; /* Adjust size */
+  height: auto;
+  z-index: 1; /* Ensure they are behind the content */
+}
+
+.top-left {
+  top: 10px;
+  left: 10px;
+}
+
+.bottom-right {
+  bottom: 10px;
+  right: 10px;
+}
+
+
 .content-wrapper {
 	display: flex;
 	flex-direction: column;
@@ -5,11 +25,13 @@
 	justify-content: center;
 	min-height: 100vh; /* Ensures the wrapper takes up full screen height */
 	text-align: center;
-	background-image: url('bananabash-background.jpg'); /* Add your image path here */
+	background-image: url('8865027.jpg'); /* Add your image path here */
 	background-size: cover; /* Scales the image to cover the entire container */
 	background-position: center; /* Centers the image */
 	background-repeat: no-repeat; /* Prevents the image from repeating */
   }
+
+
   
   .game-container {
 	position: relative;
@@ -56,7 +78,7 @@
 	height: 40px;
 	font-size: 1.2em;
 	color: #fff;
-	background-color: #007bff;
+	background-color: #054e9c;
 	border: none;
 	border-radius: 50%;
 	cursor: pointer;
@@ -64,7 +86,7 @@
   }
   
   .number-button:hover {
-	background-color: #0056b3;
+	background-color: #acc50a;
   }
   
   .answer-message {
@@ -96,35 +118,36 @@
   }
   
   /* Styling for Score and Lives */
-  .score-lives-container {
+.score-lives-container {
 	position: absolute;
-	top: 60px;
-	width: 90%;
+	top: 20px; /* Move closer to the top of the screen */
+	left: 50%; /* Center horizontally */
+	transform: translateX(-50%); /* Center alignment */
+	width: 100%;
+	max-width: 400px;
 	display: flex;
 	justify-content: space-between;
-	padding: 10px 20px;
-	max-width: 400px;
-	left: 50%;
-	transform: translateX(-50%);
+	padding: 10px;
+	z-index: 10; /* Ensure it's on top of other elements */
   }
   
   .score-lives-container div {
-	padding: 10px 20px;
-	border-radius: 10px;
-	font-size: 1.5em;
+	padding: 10px 15px;
+	border-radius: 12px;
+	font-size: 1.2em;
 	font-weight: bold;
-	color: #000000;
-	
+	color: #fff; /* White text for readability */
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Text shadow for better contrast */
   }
   
   .score {
-	background-color: #007bff46; /* Blue background for score */
-	
+	background-color: rgba(7, 70, 137, 0.886); /* Semi-transparent blue */
   }
   
   .lives {
-	background-color: #dc354687; /* Red background for lives */
+	background-color: rgba(220, 16, 36, 0.881); /* Semi-transparent red */
   }
+  
   
   /* Banana image styling */
   .banana-image {
@@ -152,4 +175,5 @@
 	color: #333; /* Darker text for contrast */
 	text-align: center;
   }
+
   
