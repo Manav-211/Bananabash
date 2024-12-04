@@ -33,4 +33,6 @@
   .navbar-button-signup:hover {
 	background-color: #388e3c; /* Darker green on hover */
   }
-  
+  .MuiIconButton-root {
+    margin: 0 8px;
+}
