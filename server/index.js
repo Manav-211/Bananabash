@@ -39,38 +39,28 @@ app.use(session({
 
 
 
-// Serve static files from the 'music' directory
+
 app.use('/music', express.static(path.join(__dirname, 'music')));
 
-// API route to get the music file URL
-app.get('/api/music', (req, res) => {
+
+
+app.get('/api/leaderboard', async (req, res) => {
     try {
-        res.json({ url: 'http://localhost:3001/music/banana_bash.mp3' });
+        const leaderboard = await UserModel.find()
+            .select("name highestScore") // Selecting both name and highestScore
+            .sort({ highestScore: -1 })  // Sorting by highest score in descending order
+            .limit(10);  // Limiting to top 10 users for the leaderboard
+        res.status(200).json(leaderboard);
     } catch (error) {
-        console.error("Error serving music file:", error);
-        res.status(500).json({ message: "Failed to fetch music file" });
+        console.error("Error fetching leaderboard:", error);
+        res.status(500).json({ message: "Failed to fetch leaderboard." });
     }
 });
 
 
-
-
-// Route to fetch banana data
-app.get('/api/banana', async (req, res) => {
-    try {
-        const response = await axios.get("http://marcconrad.com/uob/banana/api.php");
-        console.log("API Response:", response.data); // Debug: Check if data is correct
-        res.json(response.data); // Return the JSON data with number and image URL
-    } catch (error) {
-        console.error("Error fetching from API:", error);
-        res.status(500).json({ message: "Failed to fetch data", error: error.message });
-    }
+app.listen(process.env.PORT, () => {
+    console.log(`Server is running on port ${process.env.PORT}`);
 });
-
-
-
-
-  
 
 app.post('/api/submit-score', async (req, res) => {
     const { userId, score } = req.body;
@@ -100,38 +90,38 @@ app.post('/api/submit-score', async (req, res) => {
     }
 });
 
-
-app.get('/api/leaderboard', async (req, res) => {
+// API route to get the music file URL
+app.get('/api/music', (req, res) => {
     try {
-        const leaderboard = await UserModel.find()
-            .select("name highestScore") // Selecting both name and highestScore
-            .sort({ highestScore: -1 })  // Sorting by highest score in descending order
-            .limit(10);  // Limiting to top 10 users for the leaderboard
-        res.status(200).json(leaderboard);
+        res.json({ url: 'http://localhost:3001/music/banana_bash.mp3' });
     } catch (error) {
-        console.error("Error fetching leaderboard:", error);
-        res.status(500).json({ message: "Failed to fetch leaderboard." });
+        console.error("Error serving music file:", error);
+        res.status(500).json({ message: "Failed to fetch music file" });
     }
 });
 
-
-app.listen(process.env.PORT, () => {
-    console.log(`Server is running on port ${process.env.PORT}`);
-});
-
-app.post("/signup", async (req, res) => {
+// Route to fetch banana data
+app.get('/api/banana', async (req, res) => {
     try {
-        const { name, email, password } = req.body;
-        const existingUser = await UserModel.findOne({ email });
-        if (existingUser) {
-            return res.status(400).json({ error: "Email already exists" });
-        }
-        const hashedPassword = await bcrypt.hash(password, 10);
-        const newUser = new UserModel({ name, email, password: hashedPassword });
-        const savedUser = await newUser.save();
-        res.status(201).json(savedUser);
+        const response = await axios.get("http://marcconrad.com/uob/banana/api.php");
+        console.log("API Response:", response.data); // Debug: Check if data is correct
+        res.json(response.data); // Return the JSON data with number and image URL
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        console.error("Error fetching from API:", error);
+        res.status(500).json({ message: "Failed to fetch data", error: error.message });
+    }
+});
+app.post("/logout", (req, res) => {
+    if (req.session) {
+        req.session.destroy(err => {
+            if (err) {
+                res.status(500).json({ error: "Failed to logout" });
+            } else {
+                res.status(200).json("Logout successful");
+            }
+        });
+    } else {
+        res.status(400).json({ error: "No session found" });
     }
 });
 
@@ -189,19 +179,22 @@ app.post("/login", async (req, res) => {
 });
 
 
-app.post("/logout", (req, res) => {
-    if (req.session) {
-        req.session.destroy(err => {
-            if (err) {
-                res.status(500).json({ error: "Failed to logout" });
-            } else {
-                res.status(200).json("Logout successful");
-            }
-        });
-    } else {
-        res.status(400).json({ error: "No session found" });
+app.post("/signup", async (req, res) => {
+    try {
+        const { name, email, password } = req.body;
+        const existingUser = await UserModel.findOne({ email });
+        if (existingUser) {
+            return res.status(400).json({ error: "Email already exists" });
+        }
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const newUser = new UserModel({ name, email, password: hashedPassword });
+        const savedUser = await newUser.save();
+        res.status(201).json(savedUser);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
     }
 });
+
 
 app.get('/user', (req, res) => {
     if (req.session.user) {

@@ -89,13 +89,10 @@
 	background-color: #acc50a;
   }
   
-  .answer-message {
-	margin-top: 20px;
-	font-size: 1.2em;
-	font-weight: bold;
-	color: #333;
+  .number-display {
+	
+	color: #99def5; /* Use a banana-like yellow color */
   }
-  
   .leaderboard-button {
 	margin-top: 20px;
 	padding: 10px 20px;
