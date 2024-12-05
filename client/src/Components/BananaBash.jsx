@@ -164,7 +164,7 @@ function BananaBash() {
                 <div className="lives">Lives: {lives}</div>
                 <div className="score">Score: {score}</div>
               </div>
-              <p className="number-display">N: {bananaData.solution}</p>
+             
               <div className="timer-container">
                 <div
                   className="timer-progress"
